@@ -82,3 +82,22 @@ class Character {
   console.log(aurora.describe());
   console.log(glacius.describe());
 
+//JS Way Chapter 9 Account list 4/48/22
+class Account {
+    constructor(name) {
+        this.name = name
+        this.balance = 0
+    }
+    credit(amount) {
+        this.balance += amount
+    }
+    describe() {
+        return `owner: ${this.name}, balance: ${this.balance}`
+    }
+}
+let sean = new Account('Sean')
+let brad = new Account('Brad')
+let georges = new Account('Georges')
+let accounts = [sean, brad, georges]
+accounts.map(p => p.credit(1000))
+accounts.forEach(p => console.log(p.describe()))
